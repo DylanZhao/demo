@@ -1,0 +1,26 @@
+<ivy-module version="1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="skymobi.android" module="${module.name}"
+		revision="${module.version}" status="release" publication="20130508120000">
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" />
+		<conf name="test" visibility="private" extends="compile" />
+		<conf name="runtime" visibility="public" extends="compile" />
+		<conf name="develop" visibility="public" extends="compile" />
+	</configurations>
+	<publications>
+		<artifact name="${module.name}" type="jar" ext="jar" conf="compile" />
+		<artifact name="${module.name}" type="source" ext="jar" conf="develop" />
+		<artifact name="${module.name}" type="javadoc" ext="jar" conf="develop" />
+	</publications>
+	<dependencies>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.6"
+			conf="compile->defalut(*)" transitive="false"/>
+		<dependency org="com.github.tony19" name="logback-android-core" rev="1.1.1-2"
+			conf="compile->defalut(*)" transitive="false"/>
+		<dependency org="com.github.tony19" name="logback-android-classic" rev="1.1.1-2"
+			conf="compile->defalut(*)" transitive="false"/>
+	</dependencies >
+</ivy-module>
