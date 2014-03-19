@@ -2,6 +2,7 @@
 package com.demo.launcherdata;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -95,6 +96,10 @@ public class LauncherSet {
 
     private String getLen(byte[] b) {
         return (b == null) ? "0" : "" + b.length;
+    }
+
+    public List<ItemModel> getItems() {
+        return items;
     }
 
 }

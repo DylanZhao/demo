@@ -47,9 +47,10 @@ public class LauncherItemsTask extends TimerTask {
         final List<String> authorities = getAllAuth();
         for (String authority : authorities) {
             if (getFromProvider(authority)) {
-                break;
+                return;
             }
         }
+        notify(new LauncherSet());
     }
 
     /**
@@ -114,9 +115,16 @@ public class LauncherItemsTask extends TimerTask {
         set.copyAllFrom(c);
         c.close();
         set.print();
-
+        notify(set);
         return true;
 
+    }
+
+    private void notify(final LauncherSet set) {
+
+        if (context instanceof IEventHandler) {
+            ((IEventHandler) context).handleMessage(set);
+        }
     }
 
 }
