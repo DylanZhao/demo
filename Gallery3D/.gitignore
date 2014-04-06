@@ -1,16 +1,4 @@
 bin/
-out/
 gen/
-.idea/
-.DS_Store
-*.iml
-*.apk
-proguard_logs/
-
-test/out/
-test/gen/
-test/.idea/
-test/.DS_Store
-test/*.iml
-test/*.apk
+libs/
 
